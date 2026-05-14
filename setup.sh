@@ -13,3 +13,11 @@ echo "Updated project name to: $GAME_NAME"
 
 # find . -type f -name ".gitkeep" -delete
 # echo ".gitkeep files removed"
+
+rm LICENSE
+
+read -rp "Delete this script? [Y/n] " CONFIRM
+if [[ ! "$CONFIRM" =~ ^[Nn]$ ]]; then
+  rm -- "$0"
+  echo "Script deleted."
+fi
